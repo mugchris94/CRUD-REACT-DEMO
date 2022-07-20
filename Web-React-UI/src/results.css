@@ -1,0 +1,25 @@
+.results{
+    padding: 0;
+    margin:6px;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.styled-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.styled-table td,.styled-table th {
+    padding: 5px 10px;
+    border: 1px solid #E6E6E6;
+    text-align: center;
+
+}
+
+/*Responsive Design*/
+
+@media(max-width: 740px){
+    
+}
