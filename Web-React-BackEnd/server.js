@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
 const cors = require("cors");
+const mysql = require("mysql");
+
 const bodyParser = require("body-parser");
 const Axios = require('axios');
-const { default: axios } = require("axios");
-const { response } = require("express");
+
+
 
 
 //middleware use
@@ -39,7 +40,7 @@ pool.getConnection((err,conn) => {
 
 // root route with a query
 app.get("/",(req,res) => {
-    const sqlInsert = "INSERT INTO movie_reviews (id,movieName,movieReview,yearReleased,movieType) VALUES (6,'Inception','Good movie',2010,'Action'); ";
+    const sqlInsert = "INSERT INTO movie_reviews (movieName,movieReview,yearReleased,movieType) VALUES ('The Lord of the Rings: The Two Towers','nice one',2002,'Sci-fi'); ";
     pool.query(sqlInsert,(err,result) => {
         res.send('Data has been inserted my Gs');
     });
@@ -47,9 +48,16 @@ app.get("/",(req,res) => {
 });
 
 app.post("/api/postReview", (req,res) => {
+
+    const movieName = req.body.movieName;
+    const movieReview = req.body.Review;
+    const yearReleased = req.body.year;
+    const movieType = req.body.movieName;
+
     sqlInsert= "INSERT INTO movie_reviews (movieName,moviewReview,yearReleased,movieType) VALUES (?,?,?,?);";
     pool.query(sqlInsert,[movieName,movieReview,yearReleased,movieType], (err, result)=>{
         console.log("data has been inserted well");
+        console.log(err);
     });
 })
 
