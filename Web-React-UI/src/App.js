@@ -7,22 +7,28 @@ import './results.css';
 
 
 function App() {
+
   const [movieName, setMovieName] = useState("");
-  const [Review, setMovieReview] = useState("");
-  const [year, setYear] = useState("");
+  const [movieReview, setMovieReview] = useState("");
+  const [yearReleased, setYear] = useState("");
   const [movieType, setMovieType] = useState("");
 
-  const [movieReviewList, setMovieReviewList] = useState("");
+  const [movieReviewList, setMovieReviewList] = useState([]);
 
-  // useEffect(() => {
-  //   Axios.get("http://localhost:3001/api/results").then((response) => { console.log(response.data) });
-  // }, []);
+  useEffect(() => {
+    Axios.get("http://localhost:3001/api/results").then((response) => { 
+      
+      setMovieReviewList(response.data);
+      console.log(response.data) 
+    });
+  }, []);
   
   
   const submitReview =()=> {
-    Axios.post("http://localhost:3001/api/postReview", { movieName: movieName, movieReview: Review, yearReleased: year, movieType })
+    Axios.post("http://localhost:3001/api/postReview", { movieName: movieName, movieReview: movieReview, yearReleased: yearReleased, movieType })
             .then(() =>{
               console.log("successful inserted");
+              alert("got inserted please try");
             })
   }
 
@@ -73,23 +79,31 @@ function App() {
       </div>
 
       <div className="results">
+
+
           <table className="styled-table">
             <thead>
                 <tr>
-                    <th>Fullname</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Gender</th>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Review</th>
+                    <th>Year Released</th>
+                    <th>Movie Type</th>
                 </tr>
             </thead>
             <tbody>
-                <tr className="data">
-                    <td>Dom</td>
-                    <td>6000</td>
-                    <td>6000</td>
-                    <td>6000</td>
-                </tr>
-                              
+              { movieReviewList.map((movie) => (
+                  
+                  <tr className="data">
+                    <td>{ movie.id }</td>
+                    <td>{ movie.movieName }</td>
+                    <td> { movie.movieReview }</td>
+                    <td>{ movie.yearReleased }</td>
+                    <td>{ movie.movieType } </td>
+                  </tr>
+              ))}
+               
+              
             </tbody>
     </table>
       </div>

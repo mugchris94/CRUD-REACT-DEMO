@@ -50,11 +50,11 @@ app.get("/",(req,res) => {
 app.post("/api/postReview", (req,res) => {
 
     const movieName = req.body.movieName;
-    const movieReview = req.body.Review;
-    const yearReleased = req.body.year;
-    const movieType = req.body.movieName;
+    const movieReview = req.body.movieReview;
+    const yearReleased = req.body.yearReleased;
+    const movieType = req.body.movieType;
 
-    sqlInsert= "INSERT INTO movie_reviews (movieName,moviewReview,yearReleased,movieType) VALUES (?,?,?,?);";
+    sqlInsert= "INSERT INTO movie_reviews (movieName,movieReview,yearReleased,movieType) VALUES (?,?,?,?);";
     pool.query(sqlInsert,[movieName,movieReview,yearReleased,movieType], (err, result)=>{
         console.log("data has been inserted well");
         console.log(err);
@@ -67,7 +67,11 @@ app.post("/api/postReview", (req,res) => {
 app.get("/api/results", (req, res) => {
     const sqlRead= "SELECT * FROM movie_reviews";
     pool.query(sqlRead,(err,result) => {
-        console.log(result);
+        if(err){
+            console.log(err);
+        }
+        res.send(result);
+
     })
 });
 
