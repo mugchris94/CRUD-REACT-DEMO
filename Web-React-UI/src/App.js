@@ -15,13 +15,13 @@ function App() {
 
   const [movieReviewList, setMovieReviewList] = useState([]);
 
-  useEffect(() => {
-    Axios.get("http://localhost:3001/api/results").then((response) => { 
+  // useEffect(() => {
+  //   Axios.get("http://localhost:3001/api/results").then((response) => { 
       
-      setMovieReviewList(response.data);
-      console.log(response.data) 
-    });
-  }, []);
+  //     setMovieReviewList(response.data);
+  //     console.log(response.data) 
+  //   });
+  // }, []);
   
   
   const submitReview =()=> {
