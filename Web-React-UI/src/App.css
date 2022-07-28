@@ -2,32 +2,24 @@
   
   padding:12px;
   font-family: 'Poppins', sans-serif;
- 
+  margin:0;
   background-color: #E6E6E6;
   background-size: cover;
-  display: flex;
+  height: 100vh;
+  display:flex;
   flex-direction: column;
-  flex-flow: column;
-  align-items: center;
+  flex-flow: row;   
   justify-content: center;
-
-  height: 100%;
-  
 }
 
 
 .form form{
   
-  
-  display: flex;
-  flex-direction: column;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
   width: 420px;
   height:500px;
-  margin-top:100px;
-  margin-bottom: 0px;
+  margin-top:60px;
+  margin-right: 50px;
+  
  
 }
 
@@ -53,20 +45,12 @@
   outline: none;
 }
 
-
-
-
-
-
 .form-component label{
   text-align: left;
   margin-bottom: 6px;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
-
-
-
 
 
 .form-btn button{
