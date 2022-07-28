@@ -19,6 +19,7 @@
     margin-top: 0px;
     font-family: 'Poppins', sans-serif;
     width: 700px;
+    float: left;
   }
   
   table .styled-table {
