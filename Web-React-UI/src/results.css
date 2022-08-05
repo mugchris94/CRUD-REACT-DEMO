@@ -2,7 +2,7 @@
 
 /*Responsive Design*/
 
-@media(max-width: 740px){
+@media(max-width: 1000px){
     
 }
 
@@ -14,7 +14,7 @@
     padding: 10px;
     margin-top: 60px;
     font-family: 'Poppins', sans-serif;
-    width: 750px;
+    width: 970px;
     float:right;
     height: 600px;
     border-radius: 6px;
@@ -22,32 +22,34 @@
   }
   
 .styled-table {
+  
     width: 100%;
-    
     border-collapse: collapse;
     padding:5px;
-    
+    font-size: 15px;
   }
   
   
-  table > thead > tr {
+  .styled-table > thead > tr {
     
-    background-color: #2f80ed;
+    background-color: #1c4E80;
     color:#fff;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     
 
     
   }
   
-  table tr th{
+  .styled-table tr th{
     text-align: left;
-    padding:6px;
+    padding:7px 8px;
     
     
   }
 
-  table tr td{
-    padding:6px;
+  .styled-table tr td{
+    padding:7px 10px;
 
   }
   
@@ -57,3 +59,23 @@
   }
 
   table tbody tr:hover{ background-color: #ddd;}
+
+
+ 
+
+  #selector{
+    
+    background-color: #000;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    
+  }
+
+#detclick{
+  color: #1c4E80;
+  font-weight: 300;
+}
+
+#detclick a {
+  color: #1c4E80;
+}

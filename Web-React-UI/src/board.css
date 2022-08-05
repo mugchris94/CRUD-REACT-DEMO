@@ -1,0 +1,12 @@
+.board{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.movie_card{
+    width: 420px;
+}

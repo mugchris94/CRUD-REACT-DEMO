@@ -1,31 +1,42 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, {useEffect, useState} from 'react';
-import Axios from 'axios'
-import './dashboard.css';
+import Axios from 'axios';
+import '../board.css';
+import movie from '../movie1.jpg';
 
 
-function movieBoard(){
+const movieBoard = (props) => {
+    
+    const [movieList, setmovieList] = useState([]);
+
+    useEffect(() => { 
+      Axios.get("http://localhost:3001/api/results")
+            .then((response) => { 
+                setmovieList(response.data);
+                console.log(response.data);
+            });
+  
+    }, [])
+    
+
     return(
      
-      //useEffect();
-     
      <div className='board'>
-        <table>
-            <thead>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    
-                </tr>
-            </thead>
+       { movieList.map((res) => {
+         <div className='movie_card'>
+            <label>{res.movieName}</label>
+            <img src={movie} alt='poster'/>
+            <span>{res.movieReview}</span>
+            <label>{res.yearReleased}</label>
+            <label>{res.movieType}</label>
+            <span>{ res.ReviewDate}</span>
+         </div>
 
-            <tbody>
-                <tr></tr>
-            </tbody>
-
-            
-        </table>
+       })};
+       
      </div>
 
     );
 }
 
+export default movieBoard;

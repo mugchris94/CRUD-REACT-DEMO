@@ -53,9 +53,10 @@ app.post("/api/postReview", (req,res) => {
     const movieReview = req.body.movieReview;
     const yearReleased = req.body.yearReleased;
     const movieType = req.body.movieType;
+    const ReviewDate = new Date();
 
-    sqlInsert= "INSERT INTO movie_reviews (movieName,movieReview,yearReleased,movieType) VALUES (?,?,?,?);";
-    pool.query(sqlInsert,[movieName,movieReview,yearReleased,movieType], (err, result)=>{
+    sqlInsert= "INSERT INTO movie_reviews (movieName,movieReview,yearReleased,movieType,ReviewDate) VALUES (?,?,?,?,?);";
+    pool.query(sqlInsert,[movieName,movieReview,yearReleased,movieType,ReviewDate], (err, result)=>{
         console.log("data has been inserted well");
         console.log(err);
     });
@@ -79,13 +80,23 @@ app.get("/api/results", (req, res) => {
 // FAKE REST API 
 
 app.get("/api/tasks", (req,res) => {
-    axios.get('https://jsonplaceholder.typicode.com/todos')
+    Axios.get('https://jsonplaceholder.typicode.com/todos')
         .then(response => res.send(response.data));
 });
 
+//FAKE GALLERY API ENDPOINT
 
-
+app.get("/api/gallery", (req,res)=>{
+    Axios.get("https://jsonplaceholder.typicode.com/photos")
+            .then((response) => {
+                res.send(response.data);
+                console.log("The gallery is ready my son!!");
+            })
+});
 
 app.listen( 3001 , () => {
     console.log("our server is listening on port:3001");
 });
+
+
+
