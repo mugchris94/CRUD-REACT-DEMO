@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Axios from "axios";
 
 
@@ -27,13 +29,15 @@ const Home = (props) => {
               })
     }
     
-    // const showDetails = () =>{
-      
-    // }
+ 
+   
 
   return (
     <div className="Log-App">
       <div className='form'>
+      <button type="button" className="btn btn-primary">
+          Notifications <span className="badge badge-light">4</span>
+        </button>
       <form>
         <div className="form-component">
           <label>Enter MovieName</label>

@@ -22,14 +22,14 @@ const movieBoard = (props) => {
     return(
      
      <div className='board'>
-       { movieList.map((res) => {
+       { movieList.map((movie) => {
          <div className='movie_card'>
-            <label>{res.movieName}</label>
+            <label>{movie.movieName}</label>
             <img src={movie} alt='poster'/>
-            <span>{res.movieReview}</span>
-            <label>{res.yearReleased}</label>
-            <label>{res.movieType}</label>
-            <span>{ res.ReviewDate}</span>
+            <span>{movie.movieReview}</span>
+            <label>{movie.yearReleased}</label>
+            <label>{movie.movieType}</label>
+            <span>{ movie.ReviewDate}</span>
          </div>
 
        })};

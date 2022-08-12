@@ -1,31 +1,34 @@
-import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom";
 import './App.css';
 import './results.css';
 import Home from "./Home";
-import movieBoard from "./Views/movieBoard";
-import gallery from "./Views/gallery";
+import Users from "./Views/Users";
+import Profiled from "./Views/Profiled";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
 
 function App() {
- 
-   return(
-      <Router>
-         <div className="main">
-            <Home />
-         </div> 
-
-         <Switch>
-              <Route path="/" exact component={ App } />
-              <Route path="/Home" component={ Home } />
-              <Route path="/movieBoard" component={ movieBoard } />
-              <Route path="/gallery" component={ gallery }/>
-          </Switch>
-
-      </Router>
-   )
   
+      return(
+         
+      <BrowserRouter>
+   
+         
+            
+            <Routes>
+               <Route exact path="/" element={<Home/>}/>
+               <Route exact path="Users" element={<Users/>}/>
+               <Route exact path="Profiled" element={<Profiled/>}/>
+
+            </Routes>
+      </BrowserRouter>
+   
+
+         
+         
+      );     
+     
 }
 
 export default App;
