@@ -18,8 +18,8 @@ function App() {
             
             <Routes>
                <Route exact path="/" element={<Home/>}/>
-               <Route exact path="Users" element={<Users/>}/>
-               <Route exact path="Profiled" element={<Profiled/>}/>
+               <Route  path="Users" element={<Users/>}/>
+               <Route  path="Profiled" element={<Profiled/>}/>
 
             </Routes>
       </BrowserRouter>

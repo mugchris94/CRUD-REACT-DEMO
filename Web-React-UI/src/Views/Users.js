@@ -1,11 +1,13 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import axios from "axios";
 import React,{useEffect, useState} from 'react';
+import {useNavigate} from "react-router-dom";
 
 import '../timeline.css';
 
 const Users = (props) =>{
 
+    let navigate = useNavigate();
     const [persons, setPersons] = useState([]);
     const baseURL = "http://localhost:3001/api/Users";
   
@@ -37,8 +39,9 @@ const Users = (props) =>{
                         <h7>{person.email}</h7>
                         <h7>{person.website}</h7>
                         <p class="card_text">{person.company.name}</p>
-                        <a href="#" class="btn btn-info" >more Details</a>
+                        <a href="#" class="btn btn-info" onClick={() => navigate('/Profiled')} >More Details</a>
                     </div>
+
                 </div>
         )
       })

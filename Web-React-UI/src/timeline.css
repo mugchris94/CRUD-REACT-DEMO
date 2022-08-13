@@ -14,4 +14,10 @@
 
 .card{
     padding: 13px;
+    
+}
+
+.card_title{
+    font-family: 'Poppins', sans-serif;
+    font-size:20px;
 }
