@@ -31,15 +31,15 @@ const Users = (props) =>{
 
     const list =  persons.map((person) => {
             return (
-                <div class="main_card" style={{width: "18rem"}}>
+                <div className="main_card" style={{width: "18rem"}}>
                 
-                    <div class="card">
-                        <h5 class="card_title">{person.username}</h5>
+                    <div className="card">
+                        <h5 className="card_title">{person.username}</h5>
                         <h6>{person.name}</h6>
                         <h7>{person.email}</h7>
                         <h7>{person.website}</h7>
-                        <p class="card_text">{person.company.name}</p>
-                        <a href="#" class="btn btn-info" onClick={() => navigate('/Profiled')} >More Details</a>
+                        <p className="card_text">{person.company.name}</p>
+                        <a href="#" class="btn btn-info" onClick={() => navigate('/Profiled/:{person.id}')} >More Details</a>
                     </div>
 
                 </div>

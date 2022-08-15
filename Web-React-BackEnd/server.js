@@ -86,13 +86,29 @@ app.get("/api/tasks", (req,res) => {
 
 //FAKE GALLERY API ENDPOINT
 
-app.get("/api/gallery", (req,res)=>{
-    Axios.get("https://jsonplaceholder.typicode.com/photos")
-            .then((response) => {
-                res.send(response.data);
-                console.log("The gallery is ready my son!!");
+app.get("/api/Users", (req,res)=>{
+    Axios.get(`https://jsonplaceholder.typicode.com/users/`)
+            .then(response => {
+                const Users = response.data;
+                res.send(Users);
             })
+            
 });
+
+app.get("/api/Users/:id", (req,res) =>{
+
+    const user_id = req.params.id;
+    Axios.get({
+        method: 'get',
+        url: 'https://jsonplaceholder.typicode.com/users/',
+        data: {
+            id: user_id
+        }
+    }).then(response =>{
+        res.send(response.data)
+    });
+});
+
 
 app.listen( 3001 , () => {
     console.log("our server is listening on port:3001");
