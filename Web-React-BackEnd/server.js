@@ -38,7 +38,7 @@ pool.getConnection((err,conn) => {
 });
 
 
-// root route with a query
+// // root route with a query
 app.get("/",(req,res) => {
     const sqlInsert = "INSERT INTO movie_reviews (movieName,movieReview,yearReleased,movieType) VALUES ('The Lord of the Rings: The Two Towers','nice one',2002,'Sci-fi'); ";
     pool.query(sqlInsert,(err,result) => {
@@ -95,6 +95,9 @@ app.get("/api/Users", (req,res)=>{
             
 });
 
+//Endpoint for Get a single User with ID
+
+
 app.get("/api/Users/:id", (req,res) =>{
 
     const user_id = req.params.id;
@@ -107,6 +110,49 @@ app.get("/api/Users/:id", (req,res) =>{
     }).then(response =>{
         res.send(response.data)
     });
+});
+
+
+// Get all players of a team with a API
+
+app.get("/api/players/", async (req, res) =>{
+
+    try{
+        const response = await Axios.get("https://www.balldontlie.io/api/v1/players/");
+        const results = await response.data;
+        //const raw_data = results.data;
+        console.log(results);
+        res.send(results);
+    }
+    catch(error){
+
+        console.log(response.status);
+        console.error(error);
+    }
+});
+
+
+//Get a player with specific ID
+app.get('/api/players/:ID', async (req, res) => {
+    
+    try{
+       const pid = req.query.ID
+       const response = await Axios.get(`https://www.balldontlie.io/api/v1/players/`,
+       {
+        params : {
+            ID: pid
+        }
+       });
+       const results = await response.data;
+       res.send(results);
+       console.log(response.data);
+
+       console.log(req.params)
+           
+    }
+        catch(error){
+            console.error(error);
+        }
 });
 
 
