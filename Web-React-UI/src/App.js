@@ -19,7 +19,7 @@ function App() {
             <Routes>
                <Route exact path="/" element={<Home/>}/>
                <Route  path="/Users" element={<Users/>}/>
-               <Route  path="/Profiled/:id" element={<Profiled/>}/>
+               <Route  path="/Profiled?id" element={<Profiled/>}/>
                <Route path="/Players" element={<Players/>}/>
             </Routes>
       </BrowserRouter>

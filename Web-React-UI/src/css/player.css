@@ -1,17 +1,17 @@
 .players {
-    margin: 0;
+    margin-left:70px;
+    margin-right:70px;
     padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
+    display:table;
+    width: 1000px;
+    height: 100vh;
+    border: 1px solid #ccc;
 }
 
 .player-card{
-    width: 350px;
+    width: 200px;
     height: auto;
-    border-radius: 4px solid;
+    border-radius: 4px solid #ccc;
     margin-right: 2px;
 }
 

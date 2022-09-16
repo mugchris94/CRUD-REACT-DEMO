@@ -120,29 +120,21 @@ app.get("/api/players/", async (req, res) =>{
     try{
         const response = await Axios.get("https://www.balldontlie.io/api/v1/players/");
         const results = await response.data;
-        //const raw_data = results.data;
-        console.log(results);
+        
         res.send(results);
     }
     catch(error){
-
-        console.log(response.status);
         console.error(error);
     }
 });
 
 
 //Get a player with specific ID
-app.get('/api/players/:ID', async (req, res) => {
+app.get('/api/players/:pid', async (req, res) => {
     
     try{
-       const pid = req.query.ID
-       const response = await Axios.get(`https://www.balldontlie.io/api/v1/players/`,
-       {
-        params : {
-            ID: pid
-        }
-       });
+       const id = req.params.pid;
+       const response = await Axios.get(`https://www.balldontlie.io/api/v1/players/${id}`);
        const results = await response.data;
        res.send(results);
        console.log(response.data);
