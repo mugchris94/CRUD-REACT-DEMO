@@ -6,14 +6,14 @@ import { useParams } from "react-router-dom";
 
 const Profiled = (props) => {
 
-    const Userid  = useParams();
+    const params  = useParams();
     const { userDetail, setUserDetail} = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/api/Users/${Userid}`)
+        axios.get(`http://localhost:3001/api/Users/${params.id}`)
                 .then((response) => {
                     setUserDetail(response.data);
-                    console.log(Userid);
+                    console.log(params.id);
                     console.log(response.data);
                 });
     }, []);
