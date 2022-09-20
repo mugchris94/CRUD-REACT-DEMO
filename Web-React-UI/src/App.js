@@ -1,6 +1,7 @@
 import './App.css';
 import './results.css';
 import Home from "./Home";
+import Login from "./Views/Login";
 import Users from "./Views/Users";
 import Profiled from "./Views/Profiled";
 import Players from "./Views/Players";
@@ -18,6 +19,7 @@ function App() {
  
             <Routes>
                <Route exact path="/" element={<Home/>}/>
+               <Route  path='/Log_in' element={<Login/>} />
                <Route  path="/Users" element={<Users/>}/>
                <Route  path="/Profiled/:id" element={<Profiled/>}/>
                <Route path="/Players" element={<Players/>}/>

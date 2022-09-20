@@ -101,7 +101,6 @@ const Home = (props) => {
               { movieReviewList.map((movie) => (
                   
                   <tr className="data">
-                    <td><span><input type='checkbox' /></span></td>
                     <td>{ movie.id }</td>
                     <td>{ movie.movieName }</td>
                     <td> { movie.movieReview }</td>
@@ -109,6 +108,7 @@ const Home = (props) => {
                     <td>{ movie.movieType } </td>
                     <td>{ movie.ReviewDate } </td>
                     <td><span id="detclick"><a href="#"> View Details </a></span></td>
+                    <td><span><input type='checkbox' /></span></td>
                   </tr>
               ))}
                
