@@ -1,5 +1,32 @@
 .login-form{
     display: grid;
     place-items: center;
-    margin-top:15%;
+    margin-top:12%;
+
+}
+
+.form-input > label {
+    font-family: monospace, sans-serif;
+    font-size:17px;
+    color: #7d3cff;
+}
+
+.form-input > span{
+    font-size:10px;
+}
+
+.form-input{
+    display:grid;
+    width: 350px;
+}
+
+input[type=submit]{
+    height:36px;
+    margin-top:23px;
+    background-color: #7d3cff;
+    border-style:none;
+    color:#fff;
+    border-radius:3px;
+    font-size:15px;
+    font-weight:400;
 }

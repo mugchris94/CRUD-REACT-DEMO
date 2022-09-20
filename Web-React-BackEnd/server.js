@@ -19,8 +19,8 @@ const pool = mysql.createPool({
     host: '127.0.0.1',
     port: '3306',
     user: 'root',
-    password:'Password@123',
-    database:'crud_database',
+    password:'Gikondo@250',
+    database:'cruddatabase',
     debug: false
 });
 

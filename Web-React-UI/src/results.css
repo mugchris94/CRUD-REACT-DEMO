@@ -32,8 +32,8 @@
   
   .styled-table > thead > tr {
     
-    background-color: #367588;
-    color:#fff;
+    background-color: #ccc;
+    color:#234;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     
@@ -69,10 +69,10 @@
   }
 
 #detclick{
-  color: #1c4E80;
+  color: #7d3cff;
   font-weight: 300;
 }
 
 #detclick a {
-  color: #1c4E80;
+  color: #7d3cff;
 }

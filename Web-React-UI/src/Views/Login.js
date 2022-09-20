@@ -16,11 +16,20 @@ const Login = (props) => {
         <div className="login-form">
             <form className="logform">
                 <div className="form-input">
-                    <input type="email" value="email" name="user_email"/>    
-                    <input type="password" value="passwd" name="passwd"/>
+                    <label>Email</label>
+                    <input type="email" value={user_email} name="user_email" onChange={(e)=>{
+                        setUserEmail(e.target.value);
+                    }}/>    
+
+                    <label>Password</label>
+                    <input type="password" value={passwd} name="passwd" onChange={(e)=>{
+                        setPasswd(e.target.value);
+                    }}/>
+                    <span><a href="#" rel="none">forgot password</a></span>
+                    <input type="submit" value="submit" onClick={() => AuthLog()}/>
+
                 </div>
                 
-                <input type="submit" value="submit" onClick={() => AuthLog()}/>
             </form>
         </div>
      );
