@@ -1,37 +1,55 @@
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
+import { useForm } from "react-hook-form";
 import "../css/log.css";
 
 
 
 const Login = (props) => {
 
-    const [user_email, setUserEmail] = useState();
-    const [passwd, setPasswd] = useState();
-
-    const AuthLog = () =>{
-        
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [ userData, setUserData ] = useState();   
+    const onSubmit = (data) =>{
+        setUserData(JSON.stringify(data));
+        console.log(data);
     }
     
     return ( 
         <div className="login-form">
-            <form className="logform">
+            <form className="logform" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-input">
                     <label>Email</label>
-                    <input type="email" value={user_email} name="user_email" onChange={(e)=>{
-                        setUserEmail(e.target.value);
-                    }}/>    
+                    <input 
+                        type="email"                      
+                        name="user_email" 
+                        {...register("email")}
+                    />    
 
                     <label>Password</label>
-                    <input type="password" value={passwd} name="passwd" onChange={(e)=>{
-                        setPasswd(e.target.value);
-                    }}/>
+                    <input 
+                        type="password"
+                        name="passwd" 
+                        {...register("password")}
+                    />
+                    
+                    <label>Domain</label>
+                    <select name="domain" {...register("domain")}>
+                        <option value="GTBank">GTBank</option>
+                        <option value="FINABank">FINABank</option>
+                        <option value="BACAR">BACAR</option>
+                       
+                    </select>
+
                     <span><a href="#" rel="none">forgot password</a></span>
-                    <input type="submit" value="submit" onClick={() => AuthLog()}/>
+                    <input type="submit" value="submit" />
+                    
 
                 </div>
-                
+              
             </form>
+            { userData }
         </div>
+        
      );
 }
  

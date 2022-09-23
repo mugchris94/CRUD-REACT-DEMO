@@ -13,6 +13,7 @@
 
 .form-input > span{
     font-size:10px;
+    padding:0;
 }
 
 .form-input{
@@ -22,7 +23,7 @@
 
 input[type=submit]{
     height:36px;
-    margin-top:23px;
+    margin-top:15px;
     background-color: #7d3cff;
     border-style:none;
     color:#fff;
@@ -30,3 +31,5 @@ input[type=submit]{
     font-size:15px;
     font-weight:400;
 }
+
+

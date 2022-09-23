@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import './results.css';
 import Home from "./Home";
@@ -8,9 +9,6 @@ import Players from "./Views/Players";
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 
 
-
-
-
 function App() {
   
       return(
@@ -19,7 +17,7 @@ function App() {
  
             <Routes>
                <Route exact path="/" element={<Home/>}/>
-               <Route  path='/Log_in' element={<Login/>} />
+               <Route  path='/Login' element={<Login/>} />
                <Route  path="/Users" element={<Users/>}/>
                <Route  path="/Profiled/:id" element={<Profiled/>}/>
                <Route path="/Players" element={<Players/>}/>
