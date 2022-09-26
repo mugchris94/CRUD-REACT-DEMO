@@ -1,5 +1,9 @@
-.registry{
+.registry > form{
     display:grid;
     place-items: center;
     
+}
+
+.registry{
+    padding:0;
 }

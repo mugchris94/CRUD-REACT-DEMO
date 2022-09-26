@@ -22,14 +22,14 @@ const Login = (props) => {
                     <input 
                         type="email"                      
                         name="user_email" 
-                        {...register("email")}
+                        {...register("email", {required: "email is required."})}
                     />    
 
                     <label>Password</label>
                     <input 
                         type="password"
                         name="passwd" 
-                        {...register("password")}
+                        {...register("password", { required: "password is required."})}
                     />
                     
                     <label>Domain</label>

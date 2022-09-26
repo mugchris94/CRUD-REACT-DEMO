@@ -7,6 +7,7 @@ import Users from "./Views/Users";
 import Profiled from "./Views/Profiled";
 import Players from "./Views/Players";
 import {BrowserRouter, Routes, Route } from "react-router-dom";
+import UserRegistry from './Views/UserRegistry';
 
 
 function App() {
@@ -16,11 +17,12 @@ function App() {
       <BrowserRouter>
  
             <Routes>
-               <Route exact path="/" element={<Home/>}/>
+               <Route exact path="/" element={<Home/>} />
                <Route  path='/Login' element={<Login/>} />
-               <Route  path="/Users" element={<Users/>}/>
-               <Route  path="/Profiled/:id" element={<Profiled/>}/>
-               <Route path="/Players" element={<Players/>}/>
+               <Route  path='/UserRegistry' element={<UserRegistry/>} />
+               <Route  path="/Users" element={<Users/>} />
+               <Route  path="/Profiled/:id" element={<Profiled/>} />
+               <Route  path="/Players" element={<Players/>} />
             </Routes>
       </BrowserRouter>
    
