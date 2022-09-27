@@ -8,10 +8,31 @@ import '../css/registry.css';
 const UserRegistry = () => {
 
     const { register, handleSubmit } = useForm();
+    const [UserData, setUserData ] = useState([]);
+
+    const registerData= (data)=>{
+        
+        const results = JSON.stringify(data);
+        console.log(results);
+        setUserData(results);
+    }
+
 
     return ( 
-        <div className="registry">
-            <form>
+        <div className='log-container'>
+            
+            <nav>
+                <span className='logo'>mobo hub</span>
+                <ul>
+                    <li>Home</li>
+                    <li>Log in</li>
+                    <li>About us</li>
+                </ul>
+            </nav>
+
+            <div className="registry">
+            
+            <form onSubmit={handleSubmit(registerData)}>
                 <label>Username</label>
                 <input 
                     type="text" 
@@ -45,7 +66,12 @@ const UserRegistry = () => {
 
                 <input type="submit" name='submit' />
             </form>
+
+            <label>{UserData}</label>
+
         </div>
+        </div>
+        
      );
 }
  
