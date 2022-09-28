@@ -6,16 +6,21 @@
 }
 
 .form-input > label {
-    font-family: monospace, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size:17px;
-    color: #7d3cff;
+    color: #191919;
 }
 
 .form-input > span{
     font-size:10px;
     padding:0;
+    
 }
-
+.form-input > span > a{
+    text-decoration: none;
+    color: #191919;
+    cursor:move;
+}
 .form-input{
     display:grid;
     width: 350px;
@@ -24,7 +29,7 @@
 input[type=submit]{
     height:36px;
     margin-top:15px;
-    background-color: #7d3cff;
+    background-color: #f9004d;
     border-style:none;
     color:#fff;
     border-radius:3px;

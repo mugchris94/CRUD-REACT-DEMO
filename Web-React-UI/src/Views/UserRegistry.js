@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import '../css/registry.css';
 
 
@@ -22,11 +23,11 @@ const UserRegistry = () => {
         <div className='log-container'>
             
             <nav>
-                <span className='logo'>mobo hub</span>
+                <span className='logo'><Link to='/'>mobo hub</Link></span>
                 <ul>
-                    <li>Home</li>
-                    <li>Log in</li>
-                    <li>About us</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/Login">Log in</Link></li>
+                    <li><Link to="/About">About us</Link></li>
                 </ul>
             </nav>
 

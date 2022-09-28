@@ -1,7 +1,7 @@
 .registry > form{
     display:grid;
     width: 380px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .registry{
@@ -17,23 +17,20 @@ nav {
     
 }
 
-.logo{
+.logo {
     font-weight: bold;
     font-size: 23px;
-    color:#7d3cff;
+    color:#f9004d;
     
-}
-
-span .log{
-    
+    padding-left:130px;
 }
 
 
 
 nav > ul {
     list-style-type: none;
-    margin-left:30px;
-    margin-right: 150px;
+    margin-left:20px;
+    margin-right: 130px;
     margin-top: 30px;
     margin-bottom: auto;
     padding: 0px;
@@ -44,5 +41,17 @@ nav > ul {
 nav > ul > li {
     list-style-type: none;
     display: inline;
-    padding: 20px 20px;
+    
+}
+
+nav > ul > li > a{
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration:none;
+    color: #f9004d;
+}
+
+
+.log-container{
+    display: grid;
 }

@@ -51,7 +51,7 @@ height: 36px;
 line-height: 34px;
 font-size: 14px;
 color: #ffffff;
-background-color: #7d3cff ;
+background-color: #f9004d ;
 transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
 padding: 0 18px;
 }
@@ -62,7 +62,7 @@ padding: 0 18px;
 
 #pname{
     font-size: 16px;
-    color:#7d3cff ;
+    color:#f9004d ;
     font-weight: bold;
 }
 
@@ -71,6 +71,6 @@ padding: 0 18px;
 }
 
 strong{
- color: #7d3cff;
+ color: #f9004d;
  font-size: 13px;
 }

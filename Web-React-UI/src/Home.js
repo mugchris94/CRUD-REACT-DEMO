@@ -84,10 +84,9 @@ const Home = (props) => {
       <div className="results">
 
 
-          <table className="styled-table">
+          <table id="styled-table">
             <thead>
                 <tr>
-                    <th id='selector'><span><input type='checkbox' /></span></th>
                     <th>id</th>
                     <th>Name</th>
                     <th>Review</th>
@@ -95,6 +94,8 @@ const Home = (props) => {
                     <th>Movie Type</th>
                     <th>ReviewDate</th>
                     <th>Action</th>
+                    <th id='selector'><span><input type='checkbox' /></span></th>
+
                 </tr>
             </thead>
             <tbody>

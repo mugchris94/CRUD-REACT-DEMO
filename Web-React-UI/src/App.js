@@ -6,6 +6,7 @@ import Login from "./Views/Login";
 import Users from "./Views/Users";
 import Profiled from "./Views/Profiled";
 import Players from "./Views/Players";
+import About from "./Views/About";
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import UserRegistry from './Views/UserRegistry';
 
@@ -23,6 +24,7 @@ function App() {
                <Route  path="/Users" element={<Users/>} />
                <Route  path="/Profiled/:id" element={<Profiled/>} />
                <Route  path="/Players" element={<Players/>} />
+               <Route path='/About' element={<About />} />
             </Routes>
       </BrowserRouter>
    

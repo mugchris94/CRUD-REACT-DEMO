@@ -41,7 +41,7 @@ const Login = (props) => {
                     </select>
 
                     <span><a href="#" rel="none">forgot password</a></span>
-                    <input type="submit" value="submit" />
+                    <input type="submit" value="Submit" />
                     
 
                 </div>
