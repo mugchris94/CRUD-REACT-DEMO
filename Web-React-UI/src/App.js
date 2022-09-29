@@ -18,14 +18,16 @@ function App() {
       <BrowserRouter>
  
             <Routes>
-               <Route exact path="/" element={<Home/>} />
-               <Route  path='/Login' element={<Login/>} />
+               <Route exact path="/" element={<Login/>} />
+               <Route  path='/Timeline' element={<Home/>} />
                <Route  path='/UserRegistry' element={<UserRegistry/>} />
                <Route  path="/Users" element={<Users/>} />
                <Route  path="/Profiled/:id" element={<Profiled/>} />
                <Route  path="/Players" element={<Players/>} />
                <Route path='/About' element={<About />} />
+               
             </Routes>
+            
       </BrowserRouter>
    
 

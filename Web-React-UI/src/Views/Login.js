@@ -16,6 +16,7 @@ const Login = (props) => {
     
     return ( 
         <div className="login-form">
+            <img src="#" alt=''/>
             <form className="logform" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-input">
                     <label>Email</label>
