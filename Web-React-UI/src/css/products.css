@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+
+
+
+.cart{
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+#addBtn{
+    border-style: none;
+    
+    border-radius: 6px;
+    padding: 10px 23px;
+    outline: none;
+    background-color: #029Bcf;
+}
+
+.table_header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(240, 240, 240);
+}
+
+.table_header p{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+div > input{
+    padding: 8px;
+    width: 420px;
+    margin-right: 13px;
+    border: 1px solid #dddddd;
+
+}
+
+.table-layout{
+    overflow: auto;
+    height: 650px;
+}
+
+table{
+    min-width: 1000px;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+thead th{
+    position:sticky;
+    top:0;
+    background-color: #f6f9fc;
+    color: #8493a5;
+}
+
+th,td{
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+    word-break: break-all;
+}
+
+
+#product_icon {
+    width: 80px;
+    height: 64px;
+    object-fit: cover;
+    border: 2px solid #8493a5;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.action_icon {
+    width: 25px;
+    height: 25px;
+    object-fit: cover
+}
+
+p > img{
+    width: 46px;
+    height: 46px;
+    margin-left: 12px;
+}
