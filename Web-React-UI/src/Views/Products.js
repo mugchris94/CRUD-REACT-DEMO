@@ -7,25 +7,39 @@ import '../css/products.css';
 const Products = () => {
 
     const [input, setInput] = useState("");
-    const [prod , setProd] = useState([]);
+    const [itemList , setItemList] = useState([]);
 
     
     const addProduct =(todo)=>{
         
         //Create a new todo object
-        const newTodo ={
+        const newTodo = {
             id: Math.random(),
-            todo : todo
-            }
+            todo : todo,
+            };
     
             //add todo object to the list
-            setProd([...prod, newTodo])
+            setItemList([...itemList, newTodo])
     
             //clear the input field
             setInput("");
         }
-    
-   
+    const deleteItem =()=>{
+        
+    }
+        const toDo = itemList.map((item)=>{
+                        return(
+                            <tr key={item.id}>
+                                <td>{item.id}</td>
+                                <td><img src={ require('../icons/Product_icon.png')} alt="" id="product_icon"/></td>
+                                <td>{item.todo}</td>
+                                <td>Jamesrudwin@gmail.com</td>
+                                <td>James</td>
+                                <td className="action_icon"> <img src={ require('../icons/edit.png') } className="action_icon"/> | <img src={ require('../icons/trash.png')} className="action_icon" /></td>
+                            </tr>
+                        )
+             }) 
+        
     
 
 
@@ -40,7 +54,7 @@ const Products = () => {
                         setInput(e.target.value)
                     }}/>
                     <button id="addBtn"
-                        onClick={() => addProduct({input})}
+                        onClick={() => addProduct(input)}
                     >
                     + Add New
                     </button>
@@ -49,7 +63,7 @@ const Products = () => {
                 
             </div>
             <div className="table-layout">
-             { prod.map((todo)=>{
+             
                 <table>
                     <thead>
                        <tr> 
@@ -63,20 +77,10 @@ const Products = () => {
                     </thead>
 
                     <tbody>
-                        
-                        <tr>
-                            <td>{todo.id}</td>
-                            <td><img src={ require('../icons/Product_icon.png')} alt="" id="product_icon"/></td>
-                            <td>{todo.todo}</td>
-                            <td>Jamesrudwin@gmail.com</td>
-                            <td>James</td>
-                            <td className="action_icon"> <img src={ require('../icons/edit.png') } className="action_icon"/> | <img src={ require('../icons/trash.png')} className="action_icon" /></td>
-                        </tr>
-                       
-                    
+                     { toDo }
                     </tbody>
                 </table>
-                 }) }
+                
             </div>
         </div>
      );
