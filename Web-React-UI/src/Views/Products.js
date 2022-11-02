@@ -14,7 +14,7 @@ const Products = () => {
         
         //Create a new todo object
         const newTodo = {
-            id: Math.random(),
+            id: Math.floor(Math.random() * 101),
             todo : todo,
             };
     
@@ -24,8 +24,9 @@ const Products = () => {
             //clear the input field
             setInput("");
         }
-    const deleteItem =()=>{
-        
+    const deleteItem =(pid)=>{
+        const new_List = itemList.filter((todo) => todo.id !== pid)
+        setItemList(new_List)
     }
         const toDo = itemList.map((item)=>{
                         return(
@@ -33,9 +34,8 @@ const Products = () => {
                                 <td>{item.id}</td>
                                 <td><img src={ require('../icons/Product_icon.png')} alt="" id="product_icon"/></td>
                                 <td>{item.todo}</td>
-                                <td>Jamesrudwin@gmail.com</td>
                                 <td>James</td>
-                                <td className="action_icon"> <img src={ require('../icons/edit.png') } className="action_icon"/> | <img src={ require('../icons/trash.png')} className="action_icon" /></td>
+                                <td className="action_icon"> <img src={ require('../icons/edit.png') } className="action_icon" /> | <img src={ require('../icons/trash.png')} className="action_icon" onClick={() => deleteItem(item.id)} /></td>
                             </tr>
                         )
              }) 
@@ -52,6 +52,7 @@ const Products = () => {
                 <div>
                     <input type="text" placeholder="add items .." onChange={(e)=>{
                         setInput(e.target.value)
+                        e.preventDefault();
                     }}/>
                     <button id="addBtn"
                         onClick={() => addProduct(input)}
@@ -70,7 +71,6 @@ const Products = () => {
                             <th>No.</th>
                             <th>Product</th>
                             <th>Name</th>
-                            <th>Email</th>
                             <th>Owner</th>
                             <th>Action</th>
                         </tr>     
